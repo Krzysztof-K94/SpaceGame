@@ -62,7 +62,7 @@ for(let i = 0; i < 100; i++) {
 
 const createParticles = ({object, color, fades}) =>{
     //before projectile will pass player, function gonna run many times. Throttle technique prevent that and code will be
-    //executed only after specific time. It will cause that not every hitted enemy will render expolosion
+    //executed only after specific time. It will cause that not every hitted enemy will render expolosion but operation will be faster
     if(throttle){
         throttle = false;
         for(let i = 0; i < 15; i++) {
@@ -148,7 +148,7 @@ function animate() {
     });
 
     //Shooting with space
-    if(keys.space.pressed === true){
+    if(keys.space.pressed === true && game.over === false){
         projectiles.push(
             new Projectile({
                 position: {
